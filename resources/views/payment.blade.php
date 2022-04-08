@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <title>Akchakul</title>
 
 
@@ -32,7 +32,7 @@
     </a>
 
     <!--------------- NAVBAR Section --------------->
-   @include('inc.headen')
+    @include('inc.headen')
 
     <!--------------- HOME Section ----------------->
     <section class="home bg-dark" id="home">
@@ -63,88 +63,51 @@
 
     <!--------------- SERVICES Section ----------------->
     <div class="container">
-  <br>
+        <br>
 
 
-<h3 align="center"> <b> Book now </b> </h3>
+        <h3 align="center"> <b> Book now </b> </h3>
 
-   <table class="table table-dark table-striped">
-<tbody>
-<tr>
-<th>Name</th>
-<td>{{$data['name']}}</td>
-</tr>
-<tr>
-<th>Tour place</th>
-<td>{{$data['place']}}</td>
-</tr>
-<tr>
-<th>Price</th>
-<td>{{$data['price']}}</td>
-</tr>
-<tr>
-<th>Count of person</th>
-<td>{{$data['count']}}</td>
-</tr>
-<tr>
-<th>All price</th>
-<td>{{$data['all_price']}}</td>
-</tr>
-</tbody>
-</table>
+        <table class="table table-dark table-striped">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>{{$data['name']}}</td>
+                </tr>
+                <tr>
+                    <th>Tour place</th>
+                    <td>{{$data['place']}}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{$data['price']}}</td>
+                </tr>
+                <tr>
+                    <th>Count of person</th>
+                    <td>{{$data['count']}}</td>
+                </tr>
+                <tr>
+                    <th>All price</th>
+                    <td>{{$data['all_price']}}</td>
+                </tr>
+            </tbody>
+        </table>
 
 
-<form id="click_form" action="/payment" method="post" target="_blank">
-    @csrf
-<input type="hidden" name="amount" value="{{$data['all_price']}}" />
-<input type="hidden" name="return_url" value="{{env('APP_URL')}}"/>
-<p align="center"> <button type="submit" align="center" class="btn btn-primary">Book and pay</button> </p>
-</form>     
-         
+        <form id="click_form" action="/payment" method="post" target="_blank">
+            @csrf
+            <input type="hidden" name="amount" value="{{$data['all_price']}}" />
+            <input type="hidden" name="return_url" value="{{env('APP_URL')}}" />
+            <p align="center"> <button type="submit" align="center" class="btn btn-primary">Book and pay</button> </p>
+        </form>
 
-    
+
+
     </div>
 
 
+    @include('inc.footeren')
     <!--------------- FOOTER Section ----------------->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>AKCHAKUL TRAVEL</h4>
-                    <ul>
-                        <li><a href="#about">about us</a></li>
-                        <li><a href="#location">our tours</a></li>
-                        <li><a href="#services">our services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#services">services</a></li>
-                        <li><a href="#services">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>pay now</h4>
-                    <ul>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#contact">Travels</a></li>
-                        <li><a href="#contact">Pay</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class='bx bxl-telegram'></i></a>
-                        <a href="#"><i class='bx bxl-instagram'></i></a>
-                        <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="Js/script.js"></script>
     <!-- <script type="text/javascript">
